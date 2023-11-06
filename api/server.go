@@ -36,11 +36,9 @@ func (s *Server) todo(w http.ResponseWriter, r *http.Request) {
 	data := storage.PageData{
 		Title: "Todo List",
 		Todos: []storage.Todo{
-			{Item: "Jump off a cliff", IfDone: false},
+			{Item: "Install Go", IfDone: true},
 			{Item: "Learn HTMX", IfDone: false},
-			{Item: "Swim", IfDone: false},
 			{Item: "Revise Physics", IfDone: false},
-			{Item: "Drown ", IfDone: false},
 		},
 	}
 
