@@ -14,10 +14,10 @@ type Server struct {
 
 var tmpl *template.Template
 
-func NewServer(listenAddr string, store storage.Storage) *Server {
+func NewServer(listenAddr string, store storage.PageData) *Server {
 	return &Server{
 		listenAddr: listenAddr,
-		store:      store,
+		storage:    store,
 	}
 }
 
@@ -33,9 +33,9 @@ func (s *Server) home(w http.ResponseWriter, r *http.Request) {
 }
 
 func (s *Server) todo(w http.ResponseWriter, r *http.Request) {
-	data := storage{
+	data := storage.PageData{
 		Title: "Todo List",
-		Todos: []Todo{
+		Todos: []storage.Todo{
 			{Item: "Jump off a cliff", IfDone: false},
 			{Item: "Learn HTMX", IfDone: false},
 			{Item: "Swim", IfDone: false},
