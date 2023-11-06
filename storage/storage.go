@@ -9,7 +9,3 @@ type PageData struct {
 	Title string
 	Todos []Todo
 }
-
-type Storage interface {
-	PageData
-}

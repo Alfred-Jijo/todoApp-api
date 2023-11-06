@@ -9,7 +9,7 @@ import (
 
 type Server struct {
 	listenAddr string
-	storage    storage.Storage
+	storage    storage.PageData
 }
 
 var tmpl *template.Template
