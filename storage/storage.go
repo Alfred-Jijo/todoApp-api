@@ -1,4 +1,4 @@
-package types
+package storage
 
 type Todo struct {
 	Item   string
@@ -8,4 +8,8 @@ type Todo struct {
 type PageData struct {
 	Title string
 	Todos []Todo
+}
+
+type Storage interface {
+	PageData
 }
