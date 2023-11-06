@@ -33,15 +33,18 @@ func (s *Server) home(w http.ResponseWriter, r *http.Request) {
 }
 
 func (s *Server) todo(w http.ResponseWriter, r *http.Request) {
-	data := storage.PageData{
-		Title: "Todo List",
-		Todos: []storage.Todo{
-			{Item: "Install Go", IfDone: true},
-			{Item: "Learn HTMX", IfDone: false},
-			{Item: "Revise Physics", IfDone: false},
-		},
-	}
+
+	data := storage.TodoItemsInit()
 
 	tmpl = template.Must(template.ParseFiles("templates/todo.html"))
 	tmpl.Execute(w, data)
 }
+
+// data := storage.PageData{
+// 	Title: "Todo List",
+// 	Todos: []storage.Todo{
+// 		{Item: "Install Go", IfDone: true},
+// 		{Item: "Learn HTMX", IfDone: false},
+// 		{Item: "Revise Physics", IfDone: false},
+// 	},
+// }
